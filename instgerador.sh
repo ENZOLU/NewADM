@@ -31,7 +31,7 @@ veryfy_fun () {
 unset ARQ
 case $1 in
 "gerar.sh")ARQ="/usr/bin/";;
-"http-server.sh")ARQ="/bin/";;
+"http-server.py")ARQ="/bin/";;
 *)ARQ="${SCPT_DIR}/";;
 esac
 mv -f $HOME/$1 ${ARQ}/$1
