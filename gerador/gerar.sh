@@ -3,7 +3,7 @@
 clear
 [[ -e /etc/newadm-instalacao ]] && BASICINST="$(cat /etc/newadm-instalacao)" || BASICINST="menu PGet.py ports.sh ADMbot.sh message.txt usercodes sockspy.sh POpen.py PPriv.py PPub.py PDirect.py speedtest.py speed.sh utils.sh dropbear.sh apacheon.sh openvpn.sh shadowsocks.sh ssl.sh squid.sh"
 IVAR="/etc/http-instas"
-BARRA="\033[1;36m-----------------------------------------------------------------\033[0m"
+BARRA="\033[1;36m--------------------------------------------------------------------\033[0m"
 echo -e "$BARRA"
 cat << EOF
 
@@ -238,8 +238,10 @@ start_gen () {
 PIDGEN=$(ps x|grep -v grep|grep "http-server.sh")
 if [[ ! $PIDGEN ]]; then
 screen -dmS generador /bin/http-server.sh -start
+# screen -dmS generador /bin/http-server-pass.sh -start
 else
 killall http-server.sh
+# killall http-server-pass.sh
 fi
 }
 message_gen () {
@@ -303,3 +305,4 @@ echo -ne "\033[0m" && read -p "Enter"
 elif [[ ${varread} = 7 ]]; then
 message_gen
 fi
+/usr/bin/gerar.sh
