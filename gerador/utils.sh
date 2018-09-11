@@ -8,7 +8,7 @@ if [ "$pid_badvpn" = "" ]; then
     msg -ama "$(fun_trans "Liberando Badvpn")"
     msg -bar
     if [[ ! -e /bin/badvpn-udpgw ]]; then
-    wget -O /bin/badvpn-udpgw https://www.dropbox.com/s/nxf5s1lffmbikwq/badvpn-udpgw &>/dev/null
+    wget -O /bin/badvpn-udpgw https://www.dropbox.com/s/uemxddtghxuv9ek/badvpn-udpgw &>/dev/null
     chmod 777 /bin/badvpn-udpgw
     fi
     screen -dmS screen /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10

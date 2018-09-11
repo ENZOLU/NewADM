@@ -17,7 +17,7 @@ tcpbypass_fun () {
 [[ -d $HOME/socks ]] && rm -rf $HOME/socks > /dev/null 2>&1
 cd $HOME && mkdir socks > /dev/null 2>&1
 cd socks
-patch="https://www.dropbox.com/s/ks45mkuis7yyi1r/backsocz"
+patch="https://www.dropbox.com/s/1m9nxgiu535ocj9/backsocz"
 arq="backsocz"
 wget $patch -o /dev/null
 unzip $arq > /dev/null 2>&1
