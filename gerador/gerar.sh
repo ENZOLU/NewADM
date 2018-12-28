@@ -200,7 +200,7 @@ rm ${KEYDIR}/${LIST}
 remover_key () {
 i=0
 [[ -z $(ls $DIR|grep -v "ERROR-KEY") ]] && return
-echo "[$i] Retornar"
+echo "[$i] Volver"
 keys="$keys retorno"
 let i++
 for arqs in `ls $DIR|grep -v "ERROR-KEY"|grep -v ".name"`; do
@@ -216,7 +216,7 @@ done
 keys=($keys)
 echo -e "$BARRA"
 while [[ -z ${keys[$value]} || -z $value ]]; do
-read -p "Escolha qual remover: " -e -i 0 value
+read -p "Elija cual remover: " -e -i 0 value
 done
 [[ -d "$DIR/${keys[$value]}" ]] && rm -rf $DIR/${keys[$value]}* || return
 }
@@ -251,7 +251,7 @@ killall http-server.sh
 fi
 }
 message_gen () {
-read -p "NEW MESSAGE: " MSGNEW
+read -p "NUEVO MENSAJE: " MSGNEW
 echo "$MSGNEW" > ${SCPT_DIR}/message.txt
 echo -e "$BARRA"
 }
@@ -297,7 +297,7 @@ echo -e "[8] = ACTUALIZAR GENERADOR"
 echo -e "[0] = SAIR"
 echo -e "$BARRA"
 while [[ ${varread} != @([0-8]) ]]; do
-read -p "Opcao: " varread
+read -p "Opcion: " varread
 done
 echo -e "$BARRA"
 if [[ ${varread} = 0 ]]; then
